@@ -1,0 +1,480 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{lipsum}
+\usefonttheme[onlymath]{serif} %Deja la misma fuente en el modo matemático igual que en artículo
+%http://tex.stackexchange.com/questions/34265/how-to-get-beamer-math-to-look-like-article-math
+%\usefonttheme{serif}
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would l
+%\usetheme{Montpellier}%$
+%\usetheme{PaloAlto}%$
+%\usetheme{Pittsburgh}%$
+%\usetheme{Rochester}%$$ cuadros marcados rojo oscuro
+%\usetheme{Singapore}%ike to use a different
+% one: 
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+\usetheme{boxes}%$$rojo fuerte
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}%$
+%\usetheme{default}
+%\usetheme{Frankfurt}%$
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{media9} %Para poner videos
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+%Para hacer animaciones
+\usepackage{animate}
+\definecolor{UBCblue}{rgb}{0.5,0 , 0.13} % UBC Blue (primary)
+
+\setbeamercolor{frametitle}{fg=UBCblue}
+\setbeamercolor{title}{fg=UBCblue}
+\setbeamercolor{mycolor}{fg=UBCblue}
+
+
+
+%\usecolortheme{orchid}
+\usecolortheme{beaver}
+
+%Para tachar formulas
+\usepackage{cancel}
+
+\usepackage{multirow}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{wrapfig}
+\newcommand{\PP}{\mathbb{P}}
+\usepackage{color}
+\usepackage{subfigure} 
+\usepackage{pgfplots}
+
+%graficos
+\usepackage[top=3cm,left=3cm,right=3cm,bottom=3cm]{geometry}
+% Scriptsize axis style.
+\pgfplotsset{every axis/.append style={tick label style={/pgf/number format/fixed},font=\scriptsize,ylabel near ticks,xlabel near ticks,grid=major}}
+\pgfplotsset{compat=newest}
+
+\newtheorem{lem}{Lema}
+\newtheorem{defi}{Definición}
+\newtheorem{teo}{Teorema}
+\newtheorem{prop}{Proposición}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\di}{\operatorname{div}}
+\newcommand{\id}{\operatorname{Id}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\interior}{\operatorname{int}}
+\newcommand{\dd}{\operatorname{d}}
+\def\V{\mathbb V}
+\def\E{\mathcal E}
+\def\X{\mathcal X}
+\def\U{\mathbb U}
+\def\B{\mathcal B}
+\def\A{\mathbb A}
+\def\V{\mathbb V}
+\def\pb{\mathbb P}
+\def\T{\mathbb T}
+\def\C{\mathbb{C}}
+\def\I{\mathcal I }
+\def\M{\mathcal{M}}
+\def\H{\mathcal {H}}
+
+
+
+
+\newcommand{\verde}{\textcolor[cmyk]{1,0,1,0}}
+\newcommand{\azul}{\textcolor{blue}}
+\newcommand{\rojo}{\textcolor{red}}
+
+
+%Para hacer valor absoluto y normas en tex
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+%Para poner displaystyle
+\newcommand{\ds}{\displaystyle}
+
+%Para hacer indicatrices
+
+\usepackage{dsfont}
+
+\newcommand{\indAA}[3]{\mathds{1}_{(#1,#2)}(#3)}
+\newcommand{\indAC}[3]{\mathds{1}_{(#1,#2]}(#3)}
+\newcommand{\indCA}[3]{\mathds{1}_{[#1,#2)}(#3)}
+\newcommand{\indCC}[3]{\mathds{1}_{[#1,#2]}(#3)}
+\newcommand{\ind}[1]{\mathds{1}_{#1}}
+
+%Para poner en negrita modo matemático
+\newcommand{\bs}{\boldsymbol}
+
+%\title{Presentación MA6981}
+%\title[Presentación ME6909-1]{\small{ME6909-1 Trabajo de título}{}
+%\Large{Presentación de avance del 50\% \qquad \\ \qquad y Fenómenos de Concentración}}
+\centering
+\title[Presentación ME6909-1]{\Large{Convolutional RNN for RUL Prediction in Mechanical Systems}\qquad \\
+\\
+\qquad \small{Miembros de la comisión:}\\
+\qquad \small{Enrique López Droguett, Viviana Meruane Naranjo, Patricio Loncomilla Zambrana}}
+
+
+% A subtitle is optional and this may be deleted
+\subtitle{}
+
+\author[Nicolas Oyharçabal Astorga]{\Large{Nicolas Oyharçabal Astorga}}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[DIMEC UChile] % (optional, but mostly needed)
+%{\large{Departamento de Ingenier\'ia Matem\'atica\\
+  %Universidad de Chile}}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date{\today}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+%\subject{Presentación Avance 50\%}[]
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+
+
+\setbeamertemplate{navigation symbols}{}
+
+%Bloques
+%\setbeamertemplate{blocks}[default]
+%\setbeamertemplate{blocks}[rounded]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+
+
+%Listas
+\setbeamertemplate{items}[circle]
+%\setbeamertemplate{items}[ball]
+%\setbeamertemplate{items}[square]
+
+%Ancho de los bloques
+\addtobeamertemplate{block begin}{%
+  \setlength{\textwidth}{1.0\textwidth}%
+}{}
+
+\addtobeamertemplate{block alerted begin}{%
+  \setlength{\textwidth}{1.0\textwidth}%
+}{}
+
+\addtobeamertemplate{block example begin}{%
+  \setlength{\textwidth}{1.0\textwidth}%
+}{}
+
+%hacer invisible
+\setbeamercovered{transparent}
+
+% Let's get started
+\begin{document}
+
+
+\begin{frame}[plain]{}
+
+\includegraphics[height=0.35\textheight]{animate/fcfm.pdf}
+%\begin{minipage}{1.6cm}
+%			\includegraphics[scale=.12]{escudoU2014.pdf}
+%		\end{minipage}
+%		\begin{minipage}[t]{12cm}
+%			UNIVERSIDAD DE CHILE\\FACULTAD DE CIENCIAS FÍSICAS Y MATEMÁTICAS\\DEPARTAMENTO DE INGENIERÍA MECÁNICA
+%\end{minipage}
+
+    \maketitle
+\end{frame}
+
+
+
+\begin{frame}
+
+\frametitle{Contenidos}
+\tableofcontents
+\end{frame}
+
+
+
+
+\AtBeginSection
+{
+\begin{frame}{{Convolutional Recurrent Neural Networks For Remaining Useful Life Prediction in Mechanical Systems}}
+\begin{center}
+%{\Large Sección $\thesection$}
+\begin{beamercolorbox}[
+sep=8pt,center]{part title}
+%\setbeamercolor{part title}{fg=UBCblue}
+\usebeamerfont{part title}\usebeamercolor[fg=black]{part title}
+\insertsection
+\end{beamercolorbox}
+\tableofcontents[currentsection,sectionstyle=hide,subsectionstyle=show/hide]
+%\tableofcontents[currentsection,hideothersections]
+\end{center}
+\end{frame}
+}
+
+\input{introduccion.tex}
+\input{antecedentes.tex}
+\input{metodologia.tex}
+\input{resultados.tex}
+\input{conclusiones.tex}
+
+
+\section{Anexos}
+\begin{frame}{Anexos A}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.5]{animate/sensores.png}
+        \caption{Sensores o variables de salida de software C-MAPSS. \cite{turbofan_nasa}.}
+        \label{fig:my_label}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Anexos B1}
+Ecuaciones LSTM \cite{LSTM},
+    \begin{enumerate}
+    \begin{equation}
+        i_{t}^{j}= \sigma (W_{i}\cdot{x_{t}} + U{i}\cdot{h_{t-1}} + V_{i}\cdot{c_{t-1}}  + b_{i})^{j}
+    \end{equation}
+    \begin{equation}
+        f_{t}^{j}= \sigma (W_{f}\cdot{x_{t}} + U{f}\cdot{h_{t-1}} + V_{f}\cdot{c_{t-1}}  + b_{f})^{j}
+    \end{equation}
+    \begin{equation}
+        \Bar{c}_{t}^{j}= \tanh (W_{c}\cdot{x_{t}} + U{c}\cdot{h_{t-1}} + b_{c})^{j} 
+    \end{equation}
+    \begin{equation}
+         {c}_{t}^{j}= f_{t}^{j}\cdot{c_{t}^{j}} + i_{t}^{j}\cdot{\Bar{c}_{t}^{j}}
+    \end{equation} 
+    \begin{equation}
+          o_{t}^{j}= \sigma (W_{o}\cdot{x_{t}} + U{o}\cdot{h_{t-1}} + V_{o}\cdot{c_{t-1}}  + b_{o})^{j}
+    \end{equation}
+    \begin{equation}
+        {h}_{t}^{j}= o_{t}^{j} \cdot \tanh({c}_{t}^{j})
+    \end{equation}
+    
+\end{enumerate}
+
+    
+\end{frame}
+
+\begin{frame}{Anexos B2}
+Ecuaciones ConvLSTM \cite{convlstm},
+\begin{enumerate}
+    \begin{equation}
+        i_{t}^{j}= \sigma (W_{i}*{X_{t}} + U{i}*{H_{t-1}} + V_{i}\circ{C_{t-1}}  + b_{i})^{j}
+    \end{equation}
+    \begin{equation}
+        f_{t}^{j}= \sigma (W_{f}*{X_{t}} + U{f}*{H_{t-1}} + V_{f}\circ{C_{t-1}}  + b_{f})^{j}
+    \end{equation}
+    \begin{equation}
+        \Bar{C}_{t}^{j}= \tanh (W_{c}*{x_{t}} + U{c}*{h_{t-1}} + b_{C})^{j} 
+    \end{equation}
+    \begin{equation}
+         {C}_{t}^{j}= f_{t}^{j}\circ{C_{t}^{j}} + i_{t}^{j}\circ{\Bar{C}_{t}^{j}}
+    \end{equation} 
+    \begin{equation}
+          o_{t}^{j}= \sigma (W_{o}*{X_{t}} + U{o}*{H_{t-1}} + V_{o}\circ{C_{t-1}}  + b_{o})^{j}
+    \end{equation}
+    \begin{equation}
+        {H}_{t}^{j}= o_{t}^{j} \cdot \tanh ({C}_{t}^{j})
+    \end{equation}
+    
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Anexos B3}
+Ecuaciones JANET \cite{janet},
+\begin{enumerate}
+    \begin{equation}
+        f_{t}^{j}= \sigma (W_{f}*{x_{t}} + U_{f}*{h_{t-1}} + b_{f})^{j}
+    \end{equation}
+
+    \begin{equation}
+         {c}_{t}^{j}= f_{t}^{j}\odot{c_{t}^{j}} + (1 - f_{t}^{j})\odot{\tanh(W_{c}\cdot{x_{t}} + U_{c}\cdot{h_{t-1}} + b_{c})^{j})}
+    \end{equation}
+    \begin{equation}
+        {h}_{t}^{j}= {c}_{t}^{j}
+    \end{equation}
+    
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Anexos B4}
+Ecuaciones ConvJANET
+
+\begin{enumerate}
+    \begin{equation}
+        f_{t}^{j}= \sigma (W_{f}*{X_{t}} + U_{f}*{H_{t-1}} + b_{f})^{j})
+    \end{equation}
+    \begin{equation}
+         {C}_{t}^{j}= f_{t}^{j}\odot{C_{t}^{j}} + (1 - f_{t}^{j})\odot{\tanh{ (W_{c}*{X_{t}} + U_{c}*{H_{t-1}} + b_{c})^{j} } }
+    \end{equation}
+    \begin{equation}
+        {H}_{t}^{j}= {C}_{t}^{j}
+    \end{equation}
+    
+\end{enumerate}
+\end{frame}
+
+\section{Referencias}
+\begin{thebibliography}{99}
+\begin{frame}{Referencias}
+
+
+\setbeamertemplate{bibliography item}[online]
+
+\bibitem{engine777}[1] The Seattle Times
+    \newblock{Probe of 777 engine’s explosive failure pinpoints its origin, 2015}
+\bibitem{bypass_nasa}[2] Turbofan, relación de Bypass 
+    \newblock{ Imagen tomada de :\url{https://www.grc.nasa.gov/www/k-12/Missions/Jim/Project2_act.htm}, consultada 06-09-2018)}    
+    
+%\bibitem{} [2] 
+
+%\bibitem{} [3] 
+
+
+    
+\beamertemplatearticlebibitems
+    \bibitem{turbofan_nasa}[3] NASA STI Program
+    \newblock{\em \textbf{User’s Guide for the Commercial Modular Aero-Propulsion System Simulation,Version 2}, 2012}    
+    
+%\beamertemplatearticlebibitems
+%    \bibitem{rmse-score}[4] S. Zheng
+%    \newblock{\em Imagen tomada de : \textbf{Long Short-Term Memory Network for Remaining
+%Useful Life Estimation
+%}, 2017}
+
+\beamertemplatearticlebibitems
+    \bibitem{estado-arte}[4] Li, Xiang and Ding, Qian and Sun, Jian-Qiao
+    \newblock{\em \textbf{Remaining Useful Life Estimation in Prognostics Using Deep Convolution Neural Networks
+}, 2017}
+
+
+
+
+    
+\end{frame}
+
+\begin{frame}{Referencias}
+
+
+\beamertemplatearticlebibitems
+    \bibitem{NN}[5] F. Rosenblatt
+    \newblock{\em \textbf{The Perceptron}, 1958}
+    
+\beamertemplatearticlebibitems
+    \bibitem{CNN}[6] LeCun, Yann and Bernhard E. Boser and John S. Denker and Donnie Henderson and R. E. Howard and Wayne E. Hubbard and Lawrence D. Jackel
+    \newblock{\em \textbf{Handwritten Digit Recognition with a Back-Propagation Network}, 1990}    
+    
+%\beamertemplatearticlebibitems
+%    \bibitem{rmse-score}[4] S. Zheng
+%    \newblock{\em Imagen tomada de : \textbf{Long Short-Term Memory Network for Remaining
+%Useful Life Estimation
+%}, 2017}
+\beamertemplatearticlebibitems
+    \bibitem{LSTM}[7] Hochreiter, Sepp and Schmidhuber, Jürgen
+    \newblock{\em \textbf{Backpropagation through time: what it does and how to do it}, 1997}
+    
+\beamertemplatearticlebibitems
+    \bibitem{convlstm}[8] Xingjian Shi and Zhourong Chen and Hao Wang and Dit-Yan Yeung and Wai-Kin Wong and Wang-chun Woo
+    \newblock{\em \textbf{Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting
+}, 2015}
+
+
+    
+\end{frame}
+
+
+\begin{frame}{Referencias}
+
+\beamertemplatearticlebibitems
+    \bibitem{janet}[9] Jos van der Westhuizen and
+               Joan Lasenby
+    \newblock{\em \textbf{The unreasonable effectiveness of the forget gate
+}, 2018}
+
+\beamertemplatearticlebibitems
+    \bibitem{BPTT}[10] Werbos, Paul
+    \newblock{\em \textbf{Backpropagation through time: what it does and how to do it}, 1990}
+    
+\beamertemplatearticlebibitems
+    \bibitem{metricas-rmse}[11] A. Saxena
+    \newblock{\em \textbf{damage propagation modeling for aircraft engine run-to-failure simulation}, 2008}    
+
+
+\beamertemplatearticlebibitems
+    \bibitem{E-D1}[12] Srivastava, Nitish and Mansimov, Elman and Salakhutdinov, Ruslan
+    \newblock{\em \textbf{Unsupervised Learning of Video Representations Using LSTMs}, 2015}
+    
+\beamertemplatearticlebibitems
+    \bibitem{E-D2}[13] Sutskever, Ilya and Vinyals, Oriol and Le, Quoc V
+    \newblock{\em \textbf{Sequence to Sequence Learning with Neural Networks}, 2014}    
+\end{frame}
+
+\begin{frame}{Referencias}
+
+
+\beamertemplatearticlebibitems
+    \bibitem{RNN1}[14] Mikolov, Tomas and Karafiát, Martin and Burget, Lukás and Cernocký, Jan and Khudanpur, Sanjeev
+    \newblock{\em \textbf{Recurrent neural network based language model}, 2010}
+    
+\beamertemplatearticlebibitems
+    \bibitem{RNN2}[15] Sutskever, Ilya and Vinyals, Oriol and Le, Quoc V
+    \newblock{\em \textbf{Generating Sequences With Recurrent Neural Networks}, 2013}    
+    
+\end{frame}
+
+\end{thebibliography}
+\end{document}
